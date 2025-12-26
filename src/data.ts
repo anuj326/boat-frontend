@@ -200,7 +200,7 @@ export const products2: Product[] = [
     name: "Adidas Adaptive Sportswear Collection",
     price: 3500,
     oldPrice: 5500,
-    img: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/c2c6d6a75da44a17bcd0e72b5c0cf64c_9366/IN2462_HM30.jpg",
+    img: "https://images.unsplash.com/photo-1628067440432-8433362a42dd?auto=format&fit=crop&w=600&q=80",
   },
   {
     name: "Billy Footwear Low Top Zippers",
