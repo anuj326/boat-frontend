@@ -23,11 +23,16 @@ export default function CartModal({
 
   useEffect(() => {
     const existingOrder = localStorage.getItem(ORDER_KEY);
+
+    if(cart){
+        localStorage.setItem('amount', cart[0].price.toString());
+    }
   
     if (existingOrder) {
       setHasOrdered(true);
     }
-  }, []);
+  }, [cart]);
+
 
 
 

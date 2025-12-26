@@ -1,5 +1,24 @@
 import qrImage from "../assets/boat-qr.jpeg";
 
+
+const ORDER_KEY = "boat_order";
+
+type Order = {
+  product: {
+    name: string;
+    price: number;
+    img: string;
+  };
+  user: {
+    name: string;
+    phone: string;
+    address: string;
+    pincode: string;
+  };
+  paymentStatus: string;
+  orderedAt: string;
+};
+
 type Props = {
   show: boolean;
   status: "idle" | "pending";
@@ -15,6 +34,14 @@ export default function PaymentScreen({
 }: Props) {
   if (!show) return null;
 
+  const storedOrder = localStorage.getItem(ORDER_KEY);
+  const order: Order | null = storedOrder
+    ? JSON.parse(storedOrder)
+    : null; 
+const amount = localStorage.getItem('amount');
+    console.log('amount',amount);
+    
+
   return (
     <div className="modal show d-block bg-dark bg-opacity-50">
       <div className="modal-dialog modal-dialog-centered">
@@ -29,9 +56,10 @@ export default function PaymentScreen({
             {status === "idle" && (
               <>
                 <h6>Scan QR to Pay</h6>
+                <p>Amount to be Paid: ₹{amount}:00</p>
                 <img
                   src={qrImage}
-                  className="my-3"
+                  className="img-fluid my-3"
                 />
                 <button
                   className="btn btn-success w-100"
