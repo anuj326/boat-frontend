@@ -1,0 +1,39 @@
+/* =========================
+   IMAGE BANNER STYLES
+   ========================= */
+
+.banner {
+  width: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Prevent layout overflow */
+  overflow: hidden;
+}
+
+/* Default desktop height (overridable via props) */
+.banner {
+  min-height: 10vh;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .banner {
+    min-height: 10vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .banner {
+    min-height: 15vh;
+  }
+}
+
+/* Extra safety to avoid horizontal scroll */
+html,
+body {
+  overflow-x: hidden;
+}
